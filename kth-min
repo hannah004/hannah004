@@ -1,0 +1,12 @@
+n, k = map(int, input().split())
+arr = list(map(int, input().split()))
+kth_min = None
+for i in range(len(arr)):
+    count = 0
+    for j in range(len(arr)):
+        if arr[j] < arr[i] or (arr[j] == arr[i] and j < i):
+            count += 1
+    if count == k - 1:
+        kth_min = arr[i]
+        break
+print(kth_min)
